@@ -1,143 +1,278 @@
-// import 'package:flutter/material.dart';
-// import 'package:video_player/video_player.dart';
-// import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:hugeicons/hugeicons.dart';
+import 'package:video_player/video_player.dart';
+import 'package:zoovie/component/custom_like_button.dart';
+import 'package:zoovie/const/app_color.dart';
+import 'package:zoovie/const/resource.dart';
 
-// class VideoPostComponent extends StatefulWidget {
-//   @override
-//   _VideoPostComponentState createState() => _VideoPostComponentState();
-// }
+class VideoPostComponent extends StatefulWidget {
+  const VideoPostComponent({
+    super.key,
+    this.videoPath,
+    this.profileImageUrl,
+    this.userName = 'User Name',
+    this.location = 'Location',
+    this.timestamp = 'Just now',
+    this.caption = 'Caption goes here...',
+  });
 
-// class _VideoPostComponentState extends State<VideoPostComponent> {
-//   late VideoPlayerController _controller;
+  final String? videoPath;
+  final String? profileImageUrl;
+  final String userName;
+  final String location;
+  final String timestamp;
+  final String caption;
 
-//   @override
-//   void initState() {
-//     super.initState();
-//     _controller = VideoPlayerController.network(
-//       'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4',
-//     )..initialize().then((_) {
-//         setState(() {}); // To refresh the UI after initialization
-//         _controller.play(); // Auto play the video
-//       });
-//   }
+  @override
+  VideoPostComponentState createState() => VideoPostComponentState();
+}
 
-//   @override
-//   void dispose() {
-//     _controller.dispose();
-//     super.dispose();
-//   }
+class VideoPostComponentState extends State<VideoPostComponent> {
+  late VideoPlayerController _controller;
+  bool isPlaying = false;
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Stack(
-//       children: [
-//         // Background Video
-//         _controller.value.isInitialized
-//             ? AspectRatio(
-//                 aspectRatio: _controller.value.aspectRatio,
-//                 child: VideoPlayer(_controller),
-//               )
-//             : Center(child: CircularProgressIndicator()),
+  @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.asset(
+      widget.videoPath ?? R.ASSETS_DRAGON_MP4,
+    )..initialize().then((_) {
+        setState(() {});
+        _controller.setLooping(true);
+      });
 
-//         // Overlay content on top of the video
-//         Column(
-//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//           children: [
-//             // Spacer at the top
-//             SizedBox(height: 10),
-//             Expanded(child: Container()),
+    // Add listener to update play state
+    _controller.addListener(() {
+      setState(() {
+        isPlaying = _controller.value.isPlaying;
+      });
+    });
+  }
 
-//             // Bottom user-related info and description
-//             Padding(
-//               padding: const EdgeInsets.all(16.0),
-//               child: Column(
-//                 crossAxisAlignment: CrossAxisAlignment.start,
-//                 children: [
-//                   // User info and Connect button
-//                   Row(
-//                     children: [
-//                       // User Avatar
-//                       CircleAvatar(
-//                         backgroundImage: CachedNetworkImageProvider(
-//                           'https://randomuser.me/api/portraits/men/1.jpg',
-//                         ),
-//                         radius: 24,
-//                       ),
-//                       SizedBox(width: 10),
-//                       Column(
-//                         crossAxisAlignment: CrossAxisAlignment.start,
-//                         children: [
-//                           Text(
-//                             'Jedi Park',
-//                             style: TextStyle(
-//                               fontWeight: FontWeight.bold,
-//                               color: Colors.white,
-//                               fontSize: 16,
-//                             ),
-//                           ),
-//                           Text(
-//                             '2 min ago · 213 Derrick Street, Boston',
-//                             style: TextStyle(
-//                               color: Colors.white70,
-//                               fontSize: 12,
-//                             ),
-//                           ),
-//                         ],
-//                       ),
-//                       Spacer(),
-//                       ElevatedButton(
-//                         onPressed: () {},
-//                         child: Text('Connect'),
-//                         style: ElevatedButton.styleFrom(
-//                           backgroundColor: Colors.white,
-//                           foregroundColor: Colors.black,
-//                           shape: RoundedRectangleBorder(
-//                             borderRadius: BorderRadius.circular(20),
-//                           ),
-//                         ),
-//                       ),
-//                     ],
-//                   ),
-//                   SizedBox(height: 10),
-//                   // Video Description
-//                   Text(
-//                     'Video caption will be there show...',
-//                     style: TextStyle(color: Colors.white, fontSize: 14),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           ],
-//         ),
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
-//         // Right-side icons for like, comment, etc.
-//         Positioned(
-//           right: 16,
-//           bottom: 160, // Adjust this based on your design
-//           child: Column(
-//             children: [
-//               // Like Icon
-//               Icon(Icons.favorite, color: Colors.white, size: 28),
-//               SizedBox(height: 4),
-//               Text('10.2k', style: TextStyle(color: Colors.white)),
-//               SizedBox(height: 16),
+  void _togglePlayPause() {
+    setState(() {
+      if (isPlaying) {
+        _controller.pause();
+      } else {
+        _controller.play();
+      }
+      isPlaying = !isPlaying;
+    });
+  }
 
-//               // Comment Icon
-//               Icon(Icons.comment, color: Colors.white, size: 28),
-//               SizedBox(height: 4),
-//               Text('2.5k', style: TextStyle(color: Colors.white)),
-//               SizedBox(height: 16),
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height,
+      child: Stack(
+        children: [
+          if (_controller.value.isInitialized)
+            SizedBox(
+              height: double.infinity,
+              child: AspectRatio(
+                aspectRatio: _controller.value.aspectRatio,
+                child: VideoPlayer(_controller),
+              ),
+            )
+          else
+            const Center(child: CircularProgressIndicator()),
 
-//               // Share Icon
-//               Icon(Icons.share, color: Colors.white, size: 28),
-//               SizedBox(height: 16),
+          // Centered Play/Pause Button
+          Center(
+            child: GestureDetector(
+              onTap: _togglePlayPause,
+              child: Icon(
+                isPlaying ? Icons.pause : Icons.play_arrow,
+                color: Colors.white,
+                size: 64,
+              ),
+            ),
+          ),
 
-//               // VIP Icon (custom icon or SVG)
-//               Icon(Icons.star, color: Colors.white, size: 28),
-//             ],
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-// }
+          // Column for profile, caption, and other UI elements
+          Positioned.fill(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage: CachedNetworkImageProvider(
+                              widget.profileImageUrl ??
+                                  'https://randomuser.me/api/portraits/men/1.jpg',
+                            ),
+                            radius: 24,
+                          ),
+                          const SizedBox(width: 10),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                widget.userName,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              Text(
+                                '${widget.timestamp} · ${widget.location}',
+                                style: const TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          // const Spacer(),
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              foregroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            child: const Text('Connect'),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        widget.caption,
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 14),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          // Positioned for icons
+          Positioned(
+            right: 16,
+            bottom: 80.h,
+            child: Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+                vertical: 15,
+              ),
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(
+                  0.5,
+                ),
+                borderRadius: BorderRadius.circular(
+                  20,
+                ),
+              ),
+              child: const Column(
+                children: [
+                  ShareComponent(),
+                  ShareComponent(
+                    // icon: Icon(
+                    //   Icons.comment,
+                    //   color: Colors.white,
+                    //   size: 25,
+                    // ),
+                    icon: HugeIcon(
+                      icon: HugeIcons.strokeRoundedComment01,
+                      color: AppColor.whiteColor,
+                    ),
+
+                    title: '2.5k',
+                  ),
+                  ShareComponent(
+                    title: 'Share',
+                    icon: HugeIcon(
+                      icon: HugeIcons.strokeRoundedShare05,
+                      color: AppColor.whiteColor,
+                    ),
+                  ),
+                  ShareComponent(
+                    icon: HugeIcon(
+                      icon: HugeIcons.strokeRoundedDiamond02,
+                      color: AppColor.whiteColor,
+                    ),
+                    title: 'Vip',
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+          // Linear Progress Indicator
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: LinearProgressIndicator(
+              value: _controller.value.isInitialized
+                  ? _controller.value.position.inSeconds /
+                      _controller.value.duration.inSeconds
+                  : 0.0,
+              backgroundColor: Colors.white30,
+              valueColor: const AlwaysStoppedAnimation<Color>(Colors.red),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ShareComponent extends StatelessWidget {
+  const ShareComponent({
+    super.key,
+    this.icon,
+    this.title,
+  });
+
+  final Widget? icon;
+
+  final String? title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        icon ?? const CustomLikeButton(),
+        SizedBox(
+          height: 6.h,
+        ),
+        Text(
+          title ?? '10.2k',
+          style: GoogleFonts.montserrat(
+            color: AppColor.whiteColor,
+            fontSize: 10,
+            fontWeight: FontWeight.w500,
+            height: 1.6,
+          ),
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+      ],
+    );
+  }
+}

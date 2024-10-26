@@ -14,7 +14,14 @@ class HomeScreenComponent {
     VoidCallback? onTap,
   }) {
     return MaterialButton(
-      padding: EdgeInsets.zero,
+      elevation: 0,
+      hoverColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      splashColor: Colors.transparent,
+      minWidth: 100.w,
+      height: 28,
+      color: Colors.white.withOpacity(0.4),
+      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 1),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(
           12,
@@ -27,28 +34,11 @@ class HomeScreenComponent {
         ),
       ),
       onPressed: onTap,
-      child: Container(
-        alignment: Alignment.center,
-        width: 105.w,
-        height: 24,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 8,
-          vertical: 4,
-        ),
-        decoration: BoxDecoration(
-          color: const Color(0xffFFFFFF).withOpacity(
-            0.4,
-          ),
-          borderRadius: BorderRadius.circular(
-            12,
-          ),
-        ),
-        child: Image.asset(
-          imagePath ?? R.ASSETS_TAB_BTN_IMG1_PNG,
-          width: 18,
-          height: 18,
-          fit: BoxFit.cover,
-        ),
+      child: Image.asset(
+        imagePath ?? R.ASSETS_TAB_BTN_IMG1_PNG,
+        width: 18,
+        height: 18,
+        fit: BoxFit.cover,
       ),
     );
   }
