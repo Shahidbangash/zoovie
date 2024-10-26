@@ -4,9 +4,8 @@
 class R {
   const R._();
 
-  /// ![preview](file://C:\Users\SP18-BSE-105.cui\zoovie\assets\container_bg.dart.png)
-  static const String ASSETS_CONTAINER_BG_DART_PNG =
-      'assets/container_bg.dart.png';
+  /// ![preview](file://C:\Users\SP18-BSE-105.cui\zoovie\assets\container_bg.png)
+  static const String ASSETS_CONTAINER_BG_PNG = 'assets/container_bg.png';
 
   /// ![preview](file://C:\Users\SP18-BSE-105.cui\zoovie\assets\create_reel.png)
   static const String ASSETS_CREATE_REEL_PNG = 'assets/create_reel.png';

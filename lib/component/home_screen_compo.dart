@@ -21,7 +21,7 @@ class HomeScreenComponent {
         ),
         side: BorderSide(
           color: isSelected
-              ? AppColor.selectedtabButtonBorderColor
+              ? AppColor.primaryColor
               : AppColor.tabButtonBorderColor,
           width: 0.5,
         ),

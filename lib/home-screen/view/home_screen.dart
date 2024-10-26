@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:zoovie/app/profile-screen/profile_screen.dart';
 import 'package:zoovie/component/home_screen_compo.dart';
+import 'package:zoovie/const/app_color.dart';
 import 'package:zoovie/const/const.dart';
 import 'package:zoovie/const/resource.dart';
 
@@ -14,9 +16,68 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool isSelectedIndex = true;
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomAppBar(
+        elevation: 10,
+        // clipBehavior: Clip.none,
+        surfaceTintColor: Colors.transparent,
+
+        color: Colors.transparent,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconButton(
+                icon: const Icon(Icons.home),
+                onPressed: () => _onItemTapped(0),
+                color: _selectedIndex == 0 ? Colors.black : Colors.grey,
+              ),
+              IconButton(
+                icon: const Icon(Icons.search),
+                onPressed: () => _onItemTapped(1),
+                color: _selectedIndex == 1 ? Colors.black : Colors.grey,
+              ),
+              GestureDetector(
+                onTap: () => _onItemTapped(2),
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: const BoxDecoration(
+                    color: Colors.red,
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              IconButton(
+                icon: const Icon(Icons.person),
+                onPressed: () => _onItemTapped(3),
+                color: _selectedIndex == 3 ? Colors.black : Colors.grey,
+              ),
+              IconButton(
+                icon: const HugeIcon(
+                  icon: HugeIcons.strokeRoundedImage01,
+                  color: AppColor.blackColortext,
+                ),
+                onPressed: () => _onItemTapped(4),
+              ),
+            ],
+          ),
+        ),
+      ),
       backgroundColor: const Color(0xffF6F6F6),
       body: Column(
         children: [
@@ -31,11 +92,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       vertical: 15,
                     ),
                     width: width(context),
-                    height: height(context) * 0.4,
+                    height: height(context) * 0.3,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
-                          R.ASSETS_CONTAINER_BG_DART_PNG,
+                          // R.ASSETS_CONTAINER_BG_DART_PNG,
+                          R.ASSETS_CONTAINER_BG_PNG,
                         ),
                         fit: BoxFit.cover,
                       ),
