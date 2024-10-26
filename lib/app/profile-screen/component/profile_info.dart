@@ -56,7 +56,6 @@ class ProfileSection extends StatelessWidget {
               children: [
                 // First child column
                 const Column(
-                  // crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     TextComponent(
                       title: '05',
@@ -74,7 +73,6 @@ class ProfileSection extends StatelessWidget {
                 ),
                 // Second child column
                 const Column(
-                  // crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     TextComponent(
                       title: '10',
