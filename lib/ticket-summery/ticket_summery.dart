@@ -12,13 +12,13 @@ class TicketSummaryScreen extends StatelessWidget {
         backgroundColor: Colors.white,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _summaryItem('VIP Ticket', 1, 150.0),
-            _summaryItem('Standard Ticket', 2, 80.0),
-            const SizedBox(height: 24.0),
+            _summaryItem('VIP Ticket', 1, 150),
+            _summaryItem('Standard Ticket', 2, 80),
+            const SizedBox(height: 24),
 
             // Total Cost
             const Row(
@@ -29,7 +29,7 @@ class TicketSummaryScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  '\$310.00',
+                  r'$310.00',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ],
@@ -45,7 +45,7 @@ class TicketSummaryScreen extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       margin: const EdgeInsets.symmetric(vertical: 8),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

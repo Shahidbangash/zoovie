@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:zoovie/profile-screen/component/profile_info.dart';
-import 'package:zoovie/profile-screen/component/profile_tab_button.dart';
 import 'package:zoovie/component/text_component.dart';
 import 'package:zoovie/const/app_color.dart';
+import 'package:zoovie/profile-screen/component/profile_tab_button.dart';
 
 class EventComponent extends StatelessWidget {
   const EventComponent({super.key});

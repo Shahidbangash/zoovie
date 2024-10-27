@@ -374,7 +374,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           icon: Icon(
                             Icons.favorite_outline,
                           ),
-                        )
+                        ),
                       ],
                     ),
                     const SizedBox(height: 20),

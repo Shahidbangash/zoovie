@@ -12,7 +12,7 @@ class TicketTypesScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Ticket Types',
         ),
         backgroundColor: Colors.white,
@@ -63,7 +63,8 @@ class TicketTypesScreen extends StatelessWidget {
               children: [
                 Text(
                   type ?? '',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 Text(
                   'Price: \$$price',

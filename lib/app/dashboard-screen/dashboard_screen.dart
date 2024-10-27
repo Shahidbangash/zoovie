@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:zoovie/app/event-info/view/event_info.dart';
 import 'package:zoovie/app/notification-screen/view/notification_screen.dart';
-import 'package:zoovie/const/app_color.dart';
 import 'package:zoovie/home-screen/view/home_screen.dart';
 import 'package:zoovie/profile-screen/profile_screen.dart';
 import 'package:zoovie/search-screen/view/seach_screen.dart';

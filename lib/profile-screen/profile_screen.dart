@@ -150,7 +150,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ],
                     ),
                     20.height,
-                    EventComponent(),
+                    const EventComponent(),
                     30.height,
                   ],
                 ),

@@ -119,7 +119,7 @@ class EventInfoScreen extends StatelessWidget {
 
               AppComponent().ticketTypeItem(
                 available: 100,
-                price: 50.0,
+                price: 50,
                 type: 'Vip',
               ),
 
@@ -128,7 +128,7 @@ class EventInfoScreen extends StatelessWidget {
               AppComponent().ticketTypeItem(
                 available: 0,
                 unAvailableColor: AppColor.primaryColor,
-                price: 20.0,
+                price: 20,
                 type: 'basic',
                 noBookingAvilable: 'no Tickets left',
               ),

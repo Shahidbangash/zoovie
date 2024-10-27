@@ -16,39 +16,43 @@ class _CouponsScreenState extends State<CouponsScreen> {
       setState(() {
         discount = 20;
       });
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('Coupon Applied! 20% Discount.'),
-      ));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Coupon Applied! 20% Discount.'),
+        ),
+      );
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('Invalid Coupon Code'),
-      ));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Invalid Coupon Code'),
+        ),
+      );
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Coupons and Offers')),
+      appBar: AppBar(title: const Text('Coupons and Offers')),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             TextField(
               controller: _couponController,
               decoration: InputDecoration(
                 hintText: 'Enter coupon code',
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 suffixIcon: IconButton(
-                  icon: Icon(Icons.check),
+                  icon: const Icon(Icons.check),
                   onPressed: _applyCoupon,
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               'Discount: ${discount == 0 ? "No discount applied" : "$discount%"}',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ],
         ),
