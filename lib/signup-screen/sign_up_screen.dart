@@ -21,11 +21,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       backgroundColor: AppColor.whiteColor,
       appBar: AppBar(
-          backgroundColor: AppColor.whiteColor,
-          elevation: 0,
-          leading: const BackButton(
-            color: AppColor.blackColortext,
-          )),
+        backgroundColor: AppColor.whiteColor,
+        elevation: 0,
+        leading: const BackButton(
+          color: AppColor.blackColortext,
+        ),
+      ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.all(20),
@@ -34,11 +35,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: Center(
             child: Column(
               children: [
-                const Text('Create Account',
-                    style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black)),
+                const Text(
+                  'Create Account',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
                 const SizedBox(height: 5),
                 const Text(
                   'Lorem ipsum dolor sit amet, consectetur',
@@ -124,7 +128,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       icon: R.ASSETS_APPLE_PNG,
                     ),
                     CustomSocialButton(
-                        onTap: () {}, icon: R.ASSETS_FACEBOOK_PNG),
+                      onTap: () {},
+                      icon: R.ASSETS_FACEBOOK_PNG,
+                    ),
                   ],
                 ),
                 const SizedBox(height: 20),
@@ -149,30 +155,37 @@ class AgreeTermsTextCard extends StatelessWidget {
         text: TextSpan(
           text: 'By signing up you agree to our ',
           style: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              color: AppColor.primaryColor),
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+            color: AppColor.primaryColor,
+          ),
           children: [
             TextSpan(
-                text: 'Terms',
-                recognizer: TapGestureRecognizer()..onTap = () {},
-                style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: AppColor.primaryColor)),
+              text: 'Terms',
+              recognizer: TapGestureRecognizer()..onTap = () {},
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: AppColor.primaryColor,
+              ),
+            ),
             const TextSpan(
-                text: ' and ',
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: AppColor.primaryColor)),
+              text: ' and ',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: AppColor.primaryColor,
+              ),
+            ),
             TextSpan(
-                text: 'Conditions of Use',
-                recognizer: TapGestureRecognizer()..onTap = () {},
-                style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: AppColor.primaryColor)),
+              text: 'Conditions of Use',
+              recognizer: TapGestureRecognizer()..onTap = () {},
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: AppColor.primaryColor,
+              ),
+            ),
           ],
         ),
         textAlign: TextAlign.center,
@@ -182,13 +195,13 @@ class AgreeTermsTextCard extends StatelessWidget {
 }
 
 class CustomSocialButton extends StatefulWidget {
-  final String icon;
-  final VoidCallback onTap;
   const CustomSocialButton({
     required this.icon,
     required this.onTap,
     super.key,
   });
+  final String icon;
+  final VoidCallback onTap;
 
   @override
   State<CustomSocialButton> createState() => _CustomSocialButtonState();
@@ -198,7 +211,7 @@ class _CustomSocialButtonState extends State<CustomSocialButton>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   final Duration _animationDuration = const Duration(milliseconds: 300);
-  final Tween<double> _tween = Tween<double>(begin: 1.0, end: 0.95);
+  final Tween<double> _tween = Tween<double>(begin: 1, end: 0.95);
   @override
   void initState() {
     _controller = AnimationController(
@@ -453,15 +466,6 @@ class CustomTextButton extends StatelessWidget {
 // }
 
 class AuthField extends StatefulWidget {
-  final String title;
-  final String hintText;
-  final Color? titleColor;
-  final TextEditingController controller;
-  final TextInputAction? textInputAction;
-  final TextInputType? keyboardType;
-  final bool isPassword;
-  final String? Function(String?)? validator;
-  final int? maxLines;
   const AuthField({
     required this.title,
     required this.hintText,
@@ -474,6 +478,15 @@ class AuthField extends StatefulWidget {
     this.isPassword = false,
     super.key,
   });
+  final String title;
+  final String hintText;
+  final Color? titleColor;
+  final TextEditingController controller;
+  final TextInputAction? textInputAction;
+  final TextInputType? keyboardType;
+  final bool isPassword;
+  final String? Function(String?)? validator;
+  final int? maxLines;
 
   @override
   State<AuthField> createState() => _AuthFieldState();
@@ -489,8 +502,9 @@ class _AuthFieldState extends State<AuthField> {
         Text(
           widget.title,
           style: TextStyle(
-              fontSize: 14,
-              color: widget.titleColor ?? const Color(0xFF78828A)),
+            fontSize: 14,
+            color: widget.titleColor ?? const Color(0xFF78828A),
+          ),
         ),
         const SizedBox(height: 5),
         TextFormField(
@@ -516,8 +530,9 @@ class _AuthFieldState extends State<AuthField> {
                       });
                     },
                     icon: Icon(
-                        isObscure ? Icons.visibility : Icons.visibility_off,
-                        color: const Color(0xFF171725)),
+                      isObscure ? Icons.visibility : Icons.visibility_off,
+                      color: const Color(0xFF171725),
+                    ),
                   )
                 : null,
           ),

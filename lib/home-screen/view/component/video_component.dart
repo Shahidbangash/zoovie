@@ -77,6 +77,7 @@ class VideoPostComponentState extends State<VideoPostComponent> {
         children: [
           if (_controller.value.isInitialized)
             SizedBox(
+              width: double.infinity,
               height: double.infinity,
               child: AspectRatio(
                 aspectRatio: _controller.value.aspectRatio,
@@ -118,13 +119,13 @@ class VideoPostComponentState extends State<VideoPostComponent> {
                             ),
                             radius: 24,
                           ),
-                          const SizedBox(width: 10),
+                          SizedBox(width: 10.w),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 widget.userName,
-                                style: const TextStyle(
+                                style: GoogleFonts.montserrat(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                   fontSize: 16,
@@ -132,15 +133,15 @@ class VideoPostComponentState extends State<VideoPostComponent> {
                               ),
                               Text(
                                 '${widget.timestamp} · ${widget.location}',
-                                style: const TextStyle(
+                                style: GoogleFonts.montserrat(
                                   color: Colors.white70,
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                 ),
                               ),
                             ],
                           ),
                           SizedBox(
-                            width: 10.w,
+                            width: 12.w,
                           ),
                           // const Spacer(),
                           ElevatedButton(
@@ -148,15 +149,33 @@ class VideoPostComponentState extends State<VideoPostComponent> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.transparent,
                               foregroundColor: Colors.white,
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 10,
+                                vertical: 7,
+                              ),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
+                                side: const BorderSide(
+                                  width: 0.5,
+                                  color: AppColor.whiteColor,
+                                ),
                               ),
                             ),
-                            child: const Text('Connect'),
+                            child: Text(
+                              'Connect',
+                              style: GoogleFonts.montserrat(
+                                color: AppColor.whiteColor,
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w600,
+                                height: 1.6,
+                              ),
+                            ),
                           ),
                         ],
                       ),
-                      const SizedBox(height: 10),
+                      SizedBox(
+                        height: 10.h,
+                      ),
                       Text(
                         widget.caption,
                         style:

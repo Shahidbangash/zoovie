@@ -260,15 +260,12 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:zoovie/component/custom_like_button.dart';
+import 'package:zoovie/component/home_screen_compo.dart';
+import 'package:zoovie/const/resource.dart';
 import 'package:zoovie/home-screen/view/component/video_component.dart';
 import 'package:zoovie/profile-screen/profile_screen.dart';
-import 'package:zoovie/component/home_screen_compo.dart';
-import 'package:zoovie/const/app_color.dart';
-import 'package:zoovie/const/const.dart';
-import 'package:zoovie/const/resource.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -289,73 +286,75 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomAppBar(
-        elevation: 10,
-        surfaceTintColor: Colors.transparent,
-        color: Colors.transparent,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              IconButton(
-                icon: const Icon(Icons.home),
-                onPressed: () => _onItemTapped(0),
-                color: selectedIndex == 0 ? Colors.black : Colors.grey,
-              ),
-              IconButton(
-                icon: const Icon(Icons.search),
-                onPressed: () => _onItemTapped(1),
-                color: selectedIndex == 1 ? Colors.black : Colors.grey,
-              ),
-              GestureDetector(
-                onTap: () => _onItemTapped(2),
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: const BoxDecoration(
-                    color: Colors.red,
-                    shape: BoxShape.circle,
-                  ),
-                  child: const Icon(
-                    Icons.add,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              IconButton(
-                icon: const Icon(Icons.person),
-                onPressed: () => _onItemTapped(3),
-                color: selectedIndex == 3 ? Colors.black : Colors.grey,
-              ),
-              IconButton(
-                icon: const HugeIcon(
-                  icon: HugeIcons.strokeRoundedImage01,
-                  color: AppColor.blackColortext,
-                ),
-                onPressed: () => _onItemTapped(4),
-              ),
-            ],
-          ),
-        ),
-      ),
+      // bottomNavigationBar: BottomAppBar(
+      //   elevation: 10,
+      //   surfaceTintColor: Colors.transparent,
+      //   color: Colors.transparent,
+      //   child: Padding(
+      //     padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+      //     child: Row(
+      //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //       children: [
+      //         IconButton(
+      //           icon: const Icon(Icons.home),
+      //           onPressed: () => _onItemTapped(0),
+      //           color: selectedIndex == 0 ? Colors.black : Colors.grey,
+      //         ),
+      //         IconButton(
+      //           icon: const Icon(Icons.search),
+      //           onPressed: () => _onItemTapped(1),
+      //           color: selectedIndex == 1 ? Colors.black : Colors.grey,
+      //         ),
+      //         GestureDetector(
+      //           onTap: () => _onItemTapped(2),
+      //           child: Container(
+      //             padding: const EdgeInsets.all(8),
+      //             decoration: const BoxDecoration(
+      //               color: Colors.red,
+      //               shape: BoxShape.circle,
+      //             ),
+      //             child: const Icon(
+      //               Icons.add,
+      //               color: Colors.white,
+      //             ),
+      //           ),
+      //         ),
+      //         IconButton(
+      //           icon: const Icon(Icons.person),
+      //           onPressed: () => _onItemTapped(3),
+      //           color: selectedIndex == 3 ? Colors.black : Colors.grey,
+      //         ),
+      //         IconButton(
+      //           icon: const HugeIcon(
+      //             icon: HugeIcons.strokeRoundedImage01,
+      //             color: AppColor.blackColortext,
+      //           ),
+      //           onPressed: () => _onItemTapped(4),
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
       backgroundColor: const Color(0xffF6F6F6),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Header Section
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.35,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(R.ASSETS_CONTAINER_BG_PNG),
-                    fit: BoxFit.cover,
-                  ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Header Section
+            Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 15,
+              ),
+              width: MediaQuery.of(context).size.width,
+              // height: MediaQuery.of(context).size.height * 0.35,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(R.ASSETS_CONTAINER_BG_PNG),
+                  fit: BoxFit.cover,
                 ),
+              ),
+              child: SafeArea(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -461,18 +460,28 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.5,
-                child: const VideoPostComponent(
-                  videoPath: R.ASSETS_DARK_MP4,
-                ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.8,
+              child: const VideoPostComponent(
+                videoPath: R.ASSETS_DARK_MP4,
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.5,
-                child: VideoPostComponent(),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.8,
+              child: const VideoPostComponent(),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.8,
+              child: const VideoPostComponent(
+                videoPath: R.ASSETS_DARK_MP4,
               ),
-            ],
-          ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.8,
+              child: const VideoPostComponent(),
+            ),
+          ],
         ),
       ),
     );
