@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:zoovie/component/text_component.dart';
 import 'package:zoovie/const/app_color.dart';
+import 'package:zoovie/setting/setting_screen.dart';
 
 class ProfileSection extends StatelessWidget {
   const ProfileSection({super.key});
@@ -98,7 +99,14 @@ class ProfileSection extends StatelessWidget {
                       6,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute<SettingScreen>(
+                        builder: (context) => const SettingScreen(),
+                      ),
+                    );
+                  },
                   child: Text(
                     'Settings',
                     style: GoogleFonts.montserrat(
