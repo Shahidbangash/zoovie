@@ -5,6 +5,7 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:zoovie/component/app_component.dart';
 import 'package:zoovie/component/home_screen_compo.dart';
 import 'package:zoovie/const/app_color.dart';
+import 'package:zoovie/ticket-summery/ticket_summery.dart';
 
 class EventInfoScreen extends StatelessWidget {
   const EventInfoScreen({super.key});
@@ -111,27 +112,25 @@ class EventInfoScreen extends StatelessWidget {
               ),
 
               40.height,
-              AppComponent().summaryItem(
-                'Vip',
-                12,
-                12,
-              ),
 
-              AppComponent().ticketTypeItem(
-                available: 100,
-                price: 50,
-                type: 'Vip',
+              AppComponent().button(
+                context,
+                title: 'Book Now',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<TicketSummaryScreen>(
+                      builder: (context) => const TicketSummaryScreen(),
+                    ),
+                  );
+                },
               ),
-
-              10.height,
-
-              AppComponent().ticketTypeItem(
-                available: 0,
-                unAvailableColor: AppColor.primaryColor,
-                price: 20,
-                type: 'basic',
-                noBookingAvilable: 'no Tickets left',
-              ),
+              // 40.height,
+              // AppComponent().summaryItem(
+              //   'Vip',
+              //   12,
+              //   12,
+              // ),
             ],
           ),
         ),

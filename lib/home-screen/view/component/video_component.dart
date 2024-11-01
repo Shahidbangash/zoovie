@@ -13,6 +13,7 @@ class VideoPostComponent extends StatefulWidget {
     super.key,
     this.videoPath,
     this.profileImageUrl,
+    this.onConnectTap,
     this.userName = 'User Name',
     this.location = 'Location',
     this.timestamp = 'Just now',
@@ -25,6 +26,7 @@ class VideoPostComponent extends StatefulWidget {
   final String location;
   final String timestamp;
   final String caption;
+  final VoidCallback? onConnectTap;
 
   @override
   VideoPostComponentState createState() => VideoPostComponentState();
@@ -68,6 +70,8 @@ class VideoPostComponentState extends State<VideoPostComponent> {
       isPlaying = !isPlaying;
     });
   }
+
+  bool isSelected = true;
 
   @override
   Widget build(BuildContext context) {
@@ -145,7 +149,11 @@ class VideoPostComponentState extends State<VideoPostComponent> {
                           ),
                           // const Spacer(),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                isSelected = !isSelected;
+                              });
+                            },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.transparent,
                               foregroundColor: Colors.white,
@@ -162,9 +170,11 @@ class VideoPostComponentState extends State<VideoPostComponent> {
                               ),
                             ),
                             child: Text(
-                              'Connect',
+                              isSelected ? 'Connect' : 'Connected',
                               style: GoogleFonts.montserrat(
-                                color: AppColor.whiteColor,
+                                color: isSelected
+                                    ? AppColor.whiteColor
+                                    : AppColor.primaryColor,
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w600,
                                 height: 1.6,

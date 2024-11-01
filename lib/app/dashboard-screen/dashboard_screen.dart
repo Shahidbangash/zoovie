@@ -45,26 +45,35 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
-                icon: const Icon(Icons.home),
+                // icon: const Icon(Icons.home),
+                icon: HugeIcon(
+                  icon: HugeIcons.strokeRoundedHome03,
+                  color: selectedIndex == 0 ? Colors.black : Colors.grey,
+                ),
                 onPressed: () => _onItemTapped(0),
-                color: selectedIndex == 0 ? Colors.black : Colors.grey,
               ),
               IconButton(
-                icon: const Icon(Icons.search),
+                icon: HugeIcon(
+                  icon: HugeIcons.strokeRoundedSearch01,
+                  color: selectedIndex == 1 ? Colors.black : Colors.grey,
+                ),
                 onPressed: () => _onItemTapped(1),
                 color: selectedIndex == 1 ? Colors.black : Colors.grey,
               ),
               GestureDetector(
                 onTap: () => _onItemTapped(2),
                 child: Container(
+                  alignment: Alignment.center,
                   padding: const EdgeInsets.all(8),
                   decoration: const BoxDecoration(
                     color: Colors.red,
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(
-                    Icons.add,
-                    color: Colors.white,
+                  child: const Center(
+                    child: HugeIcon(
+                      icon: HugeIcons.strokeRoundedAdd01,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),

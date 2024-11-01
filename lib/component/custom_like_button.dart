@@ -6,8 +6,10 @@ class CustomLikeButton extends StatelessWidget {
   const CustomLikeButton({
     super.key,
     this.icon,
+    this.color,
   });
   final Widget? icon;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class CustomLikeButton extends StatelessWidget {
       likeBuilder: (bool isLiked) {
         return Icon(
           Icons.favorite,
-          color: isLiked ? Colors.red : Colors.white,
+          color: isLiked ? Colors.red : color ?? Colors.white,
           size: 25,
         );
       },

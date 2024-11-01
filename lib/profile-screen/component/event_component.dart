@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:zoovie/component/custom_like_button.dart';
 import 'package:zoovie/component/text_component.dart';
 import 'package:zoovie/const/app_color.dart';
 import 'package:zoovie/profile-screen/component/profile_tab_button.dart';
@@ -216,18 +217,37 @@ class EventStats extends StatelessWidget {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        StatItem(icon: Icons.favorite, label: '10.2k'),
-        StatItem(icon: Icons.chat_bubble_outline, label: '2.5k'),
-        StatItem(icon: Icons.share, label: 'Share'),
+        StatItem(
+          icon: CustomLikeButton(
+            color: Colors.black,
+          ),
+          label: '10.2k',
+        ),
+        StatItem(
+          icon: Icon(
+            Icons.chat_bubble_outline,
+          ),
+          label: '2.5k',
+        ),
+        StatItem(
+            icon: Icon(
+              Icons.share,
+            ),
+            label: 'Share'),
       ],
     );
   }
 }
 
 class StatItem extends StatefulWidget {
-  const StatItem({required this.icon, required this.label, super.key});
+  const StatItem({
+    required this.icon,
+    required this.label,
+    super.key,
+  });
 
-  final IconData icon;
+  // final IconData icon;
+  final Widget? icon;
   final String label;
 
   @override
@@ -249,10 +269,13 @@ class StatItemState extends State<StatItem> {
       onTap: _toggleColor, // Handle tap event
       child: Row(
         children: [
-          Icon(
-            widget.icon,
-            color: _isSelected ? AppColor.primaryColor : AppColor.greyTextColor,
-          ),
+          widget.icon ??
+              Icon(
+                Icons.add_ic_call,
+                color: _isSelected
+                    ? AppColor.primaryColor
+                    : AppColor.greyTextColor,
+              ),
           const SizedBox(width: 4),
           Text(
             widget.label,

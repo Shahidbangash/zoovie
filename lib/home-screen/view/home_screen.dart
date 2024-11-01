@@ -283,6 +283,8 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  bool isSelected = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -374,6 +376,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           icon: Icon(
                             Icons.favorite_outline,
                           ),
+                          color: Colors.black,
                         ),
                       ],
                     ),
@@ -479,7 +482,11 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.8,
-              child: const VideoPostComponent(),
+              child: VideoPostComponent(
+                onConnectTap: () {
+                  isSelected = !isSelected;
+                },
+              ),
             ),
           ],
         ),
