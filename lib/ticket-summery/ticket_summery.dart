@@ -86,7 +86,7 @@ class TicketSummaryScreen extends StatelessWidget {
               ],
             ),
             10.height,
-            Text(
+            const Text(
               'Ticket Description will goes here',
             )
           ],

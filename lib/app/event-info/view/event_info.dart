@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:zoovie/component/app_component.dart';
-import 'package:zoovie/component/home_screen_compo.dart';
 import 'package:zoovie/const/app_color.dart';
 import 'package:zoovie/ticket-summery/ticket_summery.dart';
 

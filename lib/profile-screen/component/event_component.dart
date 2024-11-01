@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:zoovie/component/custom_like_button.dart';
 import 'package:zoovie/component/text_component.dart';
@@ -221,19 +222,22 @@ class EventStats extends StatelessWidget {
           icon: CustomLikeButton(
             color: Colors.black,
           ),
-          label: '10.2k',
+          label: '',
         ),
         StatItem(
-          icon: Icon(
-            Icons.chat_bubble_outline,
+          icon: HugeIcon(
+            icon: HugeIcons.strokeRoundedComment01,
+            color: Colors.black,
           ),
           label: '2.5k',
         ),
         StatItem(
-            icon: Icon(
-              Icons.share,
-            ),
-            label: 'Share'),
+          icon: HugeIcon(
+            icon: HugeIcons.strokeRoundedShare05,
+            color: Colors.black,
+          ),
+          label: 'Share',
+        ),
       ],
     );
   }
@@ -246,7 +250,6 @@ class StatItem extends StatefulWidget {
     super.key,
   });
 
-  // final IconData icon;
   final Widget? icon;
   final String label;
 
@@ -255,18 +258,18 @@ class StatItem extends StatefulWidget {
 }
 
 class StatItemState extends State<StatItem> {
-  bool _isSelected = false; // Track whether the item is selected
+  bool _isSelected = false;
 
   void _toggleColor() {
     setState(() {
-      _isSelected = !_isSelected; // Toggle selection
+      _isSelected = !_isSelected;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: _toggleColor, // Handle tap event
+      onTap: _toggleColor,
       child: Row(
         children: [
           widget.icon ??
@@ -276,13 +279,12 @@ class StatItemState extends State<StatItem> {
                     ? AppColor.primaryColor
                     : AppColor.greyTextColor,
               ),
-          const SizedBox(width: 4),
+          const SizedBox(
+            width: 6,
+          ),
           Text(
             widget.label,
-            style: GoogleFonts.montserrat(
-              color:
-                  _isSelected ? AppColor.primaryColor : AppColor.greyTextColor,
-            ),
+            style: GoogleFonts.montserrat(),
           ),
         ],
       ),
