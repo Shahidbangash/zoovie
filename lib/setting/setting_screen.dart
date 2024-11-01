@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zoovie/setting/component/profile_list_comp.dart';
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
@@ -11,6 +12,7 @@ class _SettingScreenState extends State<SettingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: const Text(
@@ -18,8 +20,15 @@ class _SettingScreenState extends State<SettingScreen> {
         ),
         centerTitle: true,
       ),
-      body: Column(
-        children: [],
+      body: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: 20,
+        ),
+        child: Column(
+          children: [
+            SettingScreenComponent(),
+          ],
+        ),
       ),
     );
   }
