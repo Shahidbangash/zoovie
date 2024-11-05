@@ -9,7 +9,7 @@ import connectivity_plus
 import nb_utils
 import path_provider_foundation
 import shared_preferences_foundation
-import sqflite_darwin
+import sqflite
 import video_player_avfoundation
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
