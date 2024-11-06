@@ -19,7 +19,7 @@ dependencies:
   video_player: ^2.9.2
  
   flutter_asset_generator: ^1.2.0
-  flutter_svg: ^2.0.10+1
+  flutter_svg: ^2.0.13
   dotted_border: ^2.1.0
   cached_network_image: ^3.4.1
   hugeicons: ^0.0.7
