@@ -124,7 +124,7 @@ class HomeScreenComponent {
         Text(
           name,
           style: GoogleFonts.montserrat(
-            color: AppColor.blackColortext,
+            color: AppColor.blackColorText,
             fontSize: 12.sp,
             height: 1.6,
             fontWeight: FontWeight.w400,

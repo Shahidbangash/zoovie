@@ -105,7 +105,7 @@ class SearchEventComponent extends StatelessWidget {
               Text(
                 'JOIN NOW',
                 style: GoogleFonts.montserrat(
-                  color: AppColor.blackColortext,
+                  color: AppColor.blackColorText,
                   fontWeight: FontWeight.w600,
                   fontSize: 12.sp,
                 ),

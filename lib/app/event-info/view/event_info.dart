@@ -18,7 +18,7 @@ class EventInfoScreen extends StatelessWidget {
           'Event Information',
         ),
         titleTextStyle: GoogleFonts.montserrat(
-          color: AppColor.blackColortext,
+          color: AppColor.blackColorText,
           fontWeight: FontWeight.w600,
           fontSize: 16.sp,
         ),
@@ -48,7 +48,7 @@ class EventInfoScreen extends StatelessWidget {
                 'Live Concert 2024',
                 style: GoogleFonts.montserrat(
                   fontSize: 16.sp,
-                  color: AppColor.blackColortext,
+                  color: AppColor.blackColorText,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -79,7 +79,7 @@ class EventInfoScreen extends StatelessWidget {
                       'Performed by: John Doe',
                       style: GoogleFonts.montserrat(
                         fontSize: 16.sp,
-                        color: AppColor.blackColortext,
+                        color: AppColor.blackColorText,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -93,7 +93,7 @@ class EventInfoScreen extends StatelessWidget {
                 'Event Description',
                 style: GoogleFonts.montserrat(
                   fontSize: 18.sp,
-                  color: AppColor.blackColortext,
+                  color: AppColor.blackColorText,
                   fontWeight: FontWeight.w600,
                 ),
               ),

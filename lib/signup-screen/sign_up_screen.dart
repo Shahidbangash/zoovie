@@ -24,7 +24,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         backgroundColor: AppColor.whiteColor,
         elevation: 0,
         leading: const BackButton(
-          color: AppColor.blackColortext,
+          color: AppColor.blackColorText,
         ),
       ),
       body: SingleChildScrollView(
@@ -280,7 +280,7 @@ class TextWithDivider extends StatelessWidget {
           style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w400,
-            color: AppColor.blackColortext,
+            color: AppColor.blackColorText,
           ),
         ),
         SizedBox(width: 20),

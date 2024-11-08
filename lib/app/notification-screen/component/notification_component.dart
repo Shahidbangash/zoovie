@@ -66,7 +66,7 @@ class NotificationComponent extends StatelessWidget {
                               style: GoogleFonts.montserrat(
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w600,
-                                color: AppColor.blackColortext,
+                                color: AppColor.blackColorText,
                               ),
                             ),
                           ),

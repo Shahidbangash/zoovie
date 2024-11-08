@@ -178,7 +178,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 'OR',
                                 style: GoogleFonts.inter(
                                   fontSize: 14.sp,
-                                  color: AppColor.blackColortext,
+                                  color: AppColor.blackColorText,
                                 ),
                               ),
                             ),
@@ -188,10 +188,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             AppComponent().button(
                               context,
                               borderColor: Colors.transparent,
-                              textColor: AppColor.blackColortext,
+                              textColor: AppColor.blackColorText,
                               onTap: () {
                                 // Continue as guest action
-                                // EventDiscoveryScreen().launch(context);
+                                EventDiscoveryScreen().launch(context);
                               },
                               borderRadius: 12,
                               title: 'Continue as a Guest',

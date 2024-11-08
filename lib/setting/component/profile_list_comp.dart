@@ -23,7 +23,7 @@ class SettingScreenComponent extends StatelessWidget {
             ),
             child: const HugeIcon(
               icon: HugeIcons.strokeRoundedNotification01,
-              color: AppColor.blackColortext,
+              color: AppColor.blackColorText,
             ),
           ),
           const Text(
