@@ -31,6 +31,10 @@ class R {
   /// ![preview](file://C:\Users\SP18-BSE-105.cui\zoovie\assets\image_logo.png)
   static const String ASSETS_IMAGE_LOGO_PNG = 'assets/image_logo.png';
 
+  /// ![preview](file://C:\Users\SP18-BSE-105.cui\zoovie\assets\on_boarding_screen_img.png)
+  static const String ASSETS_ON_BOARDING_SCREEN_IMG_PNG =
+      'assets/on_boarding_screen_img.png';
+
   /// ![preview](file://C:\Users\SP18-BSE-105.cui\zoovie\assets\onboarding-first.png)
   static const String ASSETS_ONBOARDING_FIRST_PNG =
       'assets/onboarding-first.png';

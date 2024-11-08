@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zoovie/app/dashboard-screen/dashboard_screen.dart';
+import 'package:zoovie/boarding-screen/boarding_screen.dart';
 import 'package:zoovie/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -12,8 +13,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(
-        393,
-        852,
+        430,
+        930,
       ),
       minTextAdapt: true,
       splitScreenMode: true,
@@ -28,7 +29,7 @@ class App extends StatelessWidget {
           ),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
-          home: const DashBoardScreen(),
+          home: OnboardingScreen(),
         );
       },
     );
