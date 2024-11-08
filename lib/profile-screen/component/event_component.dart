@@ -98,7 +98,7 @@ class EventInfo extends StatelessWidget {
                 ),
                 shape: const RoundedRectangleBorder(
                   side: BorderSide(
-                    color: AppColor.blackColortext,
+                    color: AppColor.blackColorText,
                     width: 0.6,
                   ),
                   borderRadius: BorderRadius.all(
@@ -134,7 +134,7 @@ class EventInfo extends StatelessWidget {
 
         const TextComponent(
           title: 'Saturday night - MIDNIGHT PARTY',
-          textColor: AppColor.blackColortext,
+          textColor: AppColor.blackColorText,
           textSize: 14,
           textFontweight: FontWeight.w600,
         ),

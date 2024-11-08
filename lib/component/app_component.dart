@@ -88,7 +88,7 @@ class AppComponent {
               child: Text(
                 noBookingAvilable ?? 'Book Now',
                 style: GoogleFonts.montserrat(
-                  color: AppColor.blackColortext,
+                  color: AppColor.blackColorText,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                 ),

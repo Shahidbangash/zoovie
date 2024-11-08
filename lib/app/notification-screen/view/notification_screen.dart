@@ -25,7 +25,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
         ),
         surfaceTintColor: Colors.transparent,
         titleTextStyle: GoogleFonts.montserrat(
-          color: AppColor.blackColortext,
+          color: AppColor.blackColorText,
           fontSize: 16.sp,
           fontWeight: FontWeight.w600,
         ),
