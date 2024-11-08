@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:zoovie/component/app_component.dart';
+import 'package:zoovie/ticket_screen/view/ticket_screen.dart';
 
 class EventDetailPage extends StatelessWidget {
   const EventDetailPage({super.key});
@@ -293,7 +294,9 @@ class EventDetailPage extends StatelessWidget {
                   AppComponent().button(
                     context,
                     title: 'Book Now',
-                    onTap: () {},
+                    onTap: () {
+                      const TicketScreen().launch(context);
+                    },
                     borderRadius: 10,
                   )
                 ],
