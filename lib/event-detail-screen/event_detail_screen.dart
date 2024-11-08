@@ -191,20 +191,32 @@ class EventDetailPage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 34),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             'Organized By',
                             style: GoogleFonts.inter(
                               fontSize: 14,
-                              color: Colors.grey,
+                              color: Colors.black,
                             ),
                           ),
-                          const SizedBox(height: 15),
+                          Text(
+                            'Attendees(9)',
+                            style: GoogleFonts.inter(
+                              fontSize: 14.sp,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 15),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
                           Row(
                             children: [
                               const CircleAvatar(
@@ -237,31 +249,23 @@ class EventDetailPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Attendees(9)',
-                            style: GoogleFonts.inter(
-                              fontSize: 14.sp,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          const SizedBox(height: 8),
-                          Row(
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              for (int i = 0; i < 3; i++)
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 4),
-                                  child: CircleAvatar(
-                                    backgroundImage: NetworkImage(
-                                      'https://plus.unsplash.com/premium_photo-1661759013744-4754d402459d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D_$i',
+                              Row(
+                                children: [
+                                  for (int i = 0; i < 3; i++)
+                                    Padding(
+                                      padding: const EdgeInsets.only(right: 4),
+                                      child: CircleAvatar(
+                                        backgroundImage: NetworkImage(
+                                          'https://plus.unsplash.com/premium_photo-1661759013744-4754d402459d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D_$i',
+                                        ),
+                                        radius: 15,
+                                      ),
                                     ),
-                                    radius: 15,
-                                  ),
-                                ),
+                                ],
+                              ),
                             ],
                           ),
                         ],
