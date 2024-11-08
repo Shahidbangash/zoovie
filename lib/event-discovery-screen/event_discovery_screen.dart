@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:zoovie/const/app_color.dart';
+import 'package:zoovie/event-card-screen/event_card_screen.dart';
 
 class EventDiscoveryScreen extends StatelessWidget {
   const EventDiscoveryScreen({super.key});
@@ -236,73 +237,83 @@ class EventDiscoveryScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.only(left: 16, right: 8).r,
-            child: Container(
-              width: 220.w,
-              // height: 289,
-
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(
-                  24,
-                ),
-                image: const DecorationImage(
-                  image: AssetImage(
-                    'assets/latest_news_img.png',
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute<EventDiscoveryScreen>(
+                    builder: (context) => const EventCardScreen(),
                   ),
-                  fit: BoxFit.cover,
+                );
+              },
+              child: Container(
+                width: 220.w,
+                // height: 289,
+
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    24,
+                  ),
+                  image: const DecorationImage(
+                    image: AssetImage(
+                      'assets/latest_news_img.png',
+                    ),
+                    fit: BoxFit.cover,
+                  ),
                 ),
-              ),
-              child: Padding(
-                // padding: const EdgeInsets.all(19).r,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 15,
-                  vertical: 20,
-                ).r,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Event Title',
-                      style: GoogleFonts.inter(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      'Sat, Jun 10-10:00 AM-11:00 PM',
-                      style: GoogleFonts.inter(
-                        fontSize: 11.sp,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 4,
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.location_on,
-                          size: 12.sp,
+                child: Padding(
+                  // padding: const EdgeInsets.all(19).r,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 15,
+                    vertical: 20,
+                  ).r,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Event Title',
+                        style: GoogleFonts.inter(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w600,
                           color: Colors.white,
                         ),
-                        const SizedBox(width: 4),
-                        Expanded(
-                          child: Text(
-                            '50 Minocra Ave, Coral Gables',
-                            style: GoogleFonts.inter(
-                              fontSize: 11.sp,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w400,
-                            ),
-                            overflow: TextOverflow.ellipsis,
-                          ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'Sat, Jun 10-10:00 AM-11:00 PM',
+                        style: GoogleFonts.inter(
+                          fontSize: 11.sp,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                      const SizedBox(
+                        height: 4,
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.location_on,
+                            size: 12.sp,
+                            color: Colors.white,
+                          ),
+                          const SizedBox(width: 4),
+                          Expanded(
+                            child: Text(
+                              '50 Minocra Ave, Coral Gables',
+                              style: GoogleFonts.inter(
+                                fontSize: 11.sp,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
