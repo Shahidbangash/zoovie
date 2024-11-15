@@ -67,7 +67,7 @@ class SearchEventComponent extends StatelessWidget {
                       child: Icon(
                         Icons.circle,
                         size: 4.w,
-                        color: AppColor.primaryColor,
+                        color: AppColors.primaryColor,
                       ),
                     ),
                     Expanded(
@@ -96,7 +96,7 @@ class SearchEventComponent extends StatelessWidget {
               Text(
                 r'$10. USD',
                 style: GoogleFonts.montserrat(
-                  color: AppColor.primaryColor,
+                  color: AppColors.primaryColor,
                   fontWeight: FontWeight.w600,
                   fontSize: 14.sp,
                 ),
@@ -105,7 +105,7 @@ class SearchEventComponent extends StatelessWidget {
               Text(
                 'JOIN NOW',
                 style: GoogleFonts.montserrat(
-                  color: AppColor.blackColorText,
+                  color: AppColors.blackColorText,
                   fontWeight: FontWeight.w600,
                   fontSize: 12.sp,
                 ),

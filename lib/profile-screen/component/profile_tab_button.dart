@@ -27,7 +27,7 @@ class ProfileSCreenComponent {
         //   vertical: 15,
         // ),
         decoration: BoxDecoration(
-          color: bgColor ?? (isSelected ? AppColor.primaryColor : null),
+          color: bgColor ?? (isSelected ? AppColors.primaryColor : null),
           borderRadius: BorderRadius.circular(
             12,
           ),
@@ -36,7 +36,7 @@ class ProfileSCreenComponent {
           title ?? 'Info Button',
           style: GoogleFonts.montserrat(
             color: textColor ??
-                (isSelected ? AppColor.whiteColor : AppColor.greyTextColor),
+                (isSelected ? AppColors.whiteColor : AppColors.greyTextColor),
             fontSize: fontSize ?? 12.sp,
             fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
           ),
@@ -73,7 +73,7 @@ class ProfileSCreenComponent {
         text: title,
         height: height,
         elevation: elevation,
-        color: color ?? AppColor.primaryColor,
+        color: color ?? AppColors.primaryColor,
         textStyle: GoogleFonts.poppins(
           fontSize: textSize,
           color: textColor ?? white,
@@ -87,7 +87,7 @@ class ProfileSCreenComponent {
 
         shapeBorder: RoundedRectangleBorder(
           side: BorderSide(
-            color: borderColor ?? AppColor.primaryColor,
+            color: borderColor ?? AppColors.primaryColor,
             width: borderWidth ?? 1,
           ),
           borderRadius: BorderRadius.all(

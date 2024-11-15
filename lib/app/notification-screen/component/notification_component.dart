@@ -66,7 +66,7 @@ class NotificationComponent extends StatelessWidget {
                               style: GoogleFonts.montserrat(
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w600,
-                                color: AppColor.blackColorText,
+                                color: AppColors.blackColorText,
                               ),
                             ),
                           ),
@@ -92,7 +92,7 @@ class NotificationComponent extends StatelessWidget {
                         description,
                         style: GoogleFonts.montserrat(
                           fontSize: 12.sp,
-                          color: AppColor.greyTextColor,
+                          color: AppColors.greyTextColor,
                           fontWeight: FontWeight.w400,
                         ),
                         maxLines: 2,
@@ -111,7 +111,7 @@ class NotificationComponent extends StatelessWidget {
                             style: GoogleFonts.montserrat(
                               fontWeight: FontWeight.w400,
                               fontSize: 12.sp,
-                              color: AppColor.greyTextColor,
+                              color: AppColors.greyTextColor,
                             ),
                           ),
                           TextButton(
@@ -121,7 +121,7 @@ class NotificationComponent extends StatelessWidget {
                               style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 12.sp,
-                                color: AppColor.primaryColor,
+                                color: AppColors.primaryColor,
                               ),
                             ),
                           ),

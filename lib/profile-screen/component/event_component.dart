@@ -81,7 +81,7 @@ class EventInfo extends StatelessWidget {
             Text(
               'Sat, Jan 14 - 11:30 PM GTM-5',
               style: GoogleFonts.montserrat(
-                color: AppColor.primaryColor,
+                color: AppColors.primaryColor,
                 fontSize: 10,
                 fontWeight: FontWeight.w500,
                 height: 1.6,
@@ -98,7 +98,7 @@ class EventInfo extends StatelessWidget {
                 ),
                 shape: const RoundedRectangleBorder(
                   side: BorderSide(
-                    color: AppColor.blackColorText,
+                    color: AppColors.blackColorText,
                     width: 0.6,
                   ),
                   borderRadius: BorderRadius.all(
@@ -113,7 +113,7 @@ class EventInfo extends StatelessWidget {
                 style: GoogleFonts.montserrat(
                   fontWeight: FontWeight.w600,
                   fontSize: 10,
-                  color: AppColor.greyTextColor,
+                  color: AppColors.greyTextColor,
                 ),
               ),
             ),
@@ -134,7 +134,7 @@ class EventInfo extends StatelessWidget {
 
         const TextComponent(
           title: 'Saturday night - MIDNIGHT PARTY',
-          textColor: AppColor.blackColorText,
+          textColor: AppColors.blackColorText,
           textSize: 14,
           textFontweight: FontWeight.w600,
         ),
@@ -150,7 +150,7 @@ class EventInfo extends StatelessWidget {
         const TextComponent(
           title:
               'Goodwin club, 67114 Gonzalo Manors, South Angelostad, 5 miles away',
-          textColor: AppColor.greyTextColor,
+          textColor: AppColors.greyTextColor,
           textSize: 12,
           textFontweight: FontWeight.w400,
           alignText: TextAlign.start,
@@ -276,8 +276,8 @@ class StatItemState extends State<StatItem> {
               Icon(
                 Icons.add_ic_call,
                 color: _isSelected
-                    ? AppColor.primaryColor
-                    : AppColor.greyTextColor,
+                    ? AppColors.primaryColor
+                    : AppColors.greyTextColor,
               ),
           const SizedBox(
             width: 6,

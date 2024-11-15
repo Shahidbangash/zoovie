@@ -77,7 +77,7 @@ class AppComponent {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColor.greyTextColor.withOpacity(
+                backgroundColor: AppColors.greyTextColor.withOpacity(
                   0.3,
                 ),
                 elevation: 0,
@@ -88,7 +88,7 @@ class AppComponent {
               child: Text(
                 noBookingAvilable ?? 'Book Now',
                 style: GoogleFonts.montserrat(
-                  color: AppColor.blackColorText,
+                  color: AppColors.blackColorText,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                 ),
@@ -128,7 +128,7 @@ class AppComponent {
         text: title,
         height: height,
         elevation: elevation,
-        color: color ?? AppColor.primaryColor,
+        color: color ?? AppColors.primaryColor,
         textStyle: GoogleFonts.poppins(
           fontSize: textSize,
           color: textColor ?? white,
@@ -142,7 +142,7 @@ class AppComponent {
 
         shapeBorder: RoundedRectangleBorder(
           side: BorderSide(
-            color: borderColor ?? AppColor.primaryColor,
+            color: borderColor ?? AppColors.primaryColor,
             width: borderWidth ?? 1,
           ),
           borderRadius: BorderRadius.all(

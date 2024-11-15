@@ -28,8 +28,8 @@ class HomeScreenComponent {
         ),
         side: BorderSide(
           color: isSelected
-              ? AppColor.primaryColor
-              : AppColor.tabButtonBorderColor,
+              ? AppColors.primaryColor
+              : AppColors.tabButtonBorderColor,
           width: 0.5,
         ),
       ),
@@ -124,7 +124,7 @@ class HomeScreenComponent {
         Text(
           name,
           style: GoogleFonts.montserrat(
-            color: AppColor.blackColorText,
+            color: AppColors.blackColorText,
             fontSize: 12.sp,
             height: 1.6,
             fontWeight: FontWeight.w400,

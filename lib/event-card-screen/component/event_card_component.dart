@@ -60,7 +60,7 @@ class EventCard extends StatelessWidget {
                         style: GoogleFonts.inter(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
-                          color: AppColor.blackColorText,
+                          color: AppColors.blackColorText,
                         ),
                       ),
                       SizedBox(height: 8.h),
@@ -72,7 +72,7 @@ class EventCard extends StatelessWidget {
                         style: GoogleFonts.inter(
                           fontSize: 13.sp,
                           fontWeight: FontWeight.w500,
-                          color: AppColor.primaryColor,
+                          color: AppColors.primaryColor,
                         ),
                       ),
                       SizedBox(height: 8.h),
@@ -92,7 +92,7 @@ class EventCard extends StatelessWidget {
                               style: GoogleFonts.inter(
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w500,
-                                color: AppColor.blackColorText,
+                                color: AppColors.blackColorText,
                               ),
                               overflow: TextOverflow.ellipsis,
                             ),

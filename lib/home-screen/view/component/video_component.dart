@@ -165,7 +165,7 @@ class VideoPostComponentState extends State<VideoPostComponent> {
                                 borderRadius: BorderRadius.circular(12),
                                 side: const BorderSide(
                                   width: 0.5,
-                                  color: AppColor.whiteColor,
+                                  color: AppColors.whiteColor,
                                 ),
                               ),
                             ),
@@ -173,8 +173,8 @@ class VideoPostComponentState extends State<VideoPostComponent> {
                               isSelected ? 'Connect' : 'Connected',
                               style: GoogleFonts.montserrat(
                                 color: isSelected
-                                    ? AppColor.whiteColor
-                                    : AppColor.primaryColor,
+                                    ? AppColors.whiteColor
+                                    : AppColors.primaryColor,
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w600,
                                 height: 1.6,
@@ -226,7 +226,7 @@ class VideoPostComponentState extends State<VideoPostComponent> {
                     // ),
                     icon: HugeIcon(
                       icon: HugeIcons.strokeRoundedComment01,
-                      color: AppColor.whiteColor,
+                      color: AppColors.whiteColor,
                     ),
 
                     title: '2.5k',
@@ -235,13 +235,13 @@ class VideoPostComponentState extends State<VideoPostComponent> {
                     title: 'Share',
                     icon: HugeIcon(
                       icon: HugeIcons.strokeRoundedShare05,
-                      color: AppColor.whiteColor,
+                      color: AppColors.whiteColor,
                     ),
                   ),
                   ShareComponent(
                     icon: HugeIcon(
                       icon: HugeIcons.strokeRoundedDiamond02,
-                      color: AppColor.whiteColor,
+                      color: AppColors.whiteColor,
                     ),
                     title: 'Vip',
                   ),
@@ -292,7 +292,7 @@ class ShareComponent extends StatelessWidget {
         Text(
           title ?? '10.2k',
           style: GoogleFonts.montserrat(
-            color: AppColor.whiteColor,
+            color: AppColors.whiteColor,
             fontSize: 10,
             fontWeight: FontWeight.w500,
             height: 1.6,

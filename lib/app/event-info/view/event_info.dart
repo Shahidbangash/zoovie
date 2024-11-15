@@ -18,7 +18,7 @@ class EventInfoScreen extends StatelessWidget {
           'Event Information',
         ),
         titleTextStyle: GoogleFonts.montserrat(
-          color: AppColor.blackColorText,
+          color: AppColors.blackColorText,
           fontWeight: FontWeight.w600,
           fontSize: 16.sp,
         ),
@@ -48,7 +48,7 @@ class EventInfoScreen extends StatelessWidget {
                 'Live Concert 2024',
                 style: GoogleFonts.montserrat(
                   fontSize: 16.sp,
-                  color: AppColor.blackColorText,
+                  color: AppColors.blackColorText,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -59,7 +59,7 @@ class EventInfoScreen extends StatelessWidget {
                 'Date: Dec 15, 2024',
                 style: GoogleFonts.montserrat(
                   fontSize: 14.sp,
-                  color: AppColor.greyTextColor,
+                  color: AppColors.greyTextColor,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -79,7 +79,7 @@ class EventInfoScreen extends StatelessWidget {
                       'Performed by: John Doe',
                       style: GoogleFonts.montserrat(
                         fontSize: 16.sp,
-                        color: AppColor.blackColorText,
+                        color: AppColors.blackColorText,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -93,7 +93,7 @@ class EventInfoScreen extends StatelessWidget {
                 'Event Description',
                 style: GoogleFonts.montserrat(
                   fontSize: 18.sp,
-                  color: AppColor.blackColorText,
+                  color: AppColors.blackColorText,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -105,7 +105,7 @@ class EventInfoScreen extends StatelessWidget {
                 style: GoogleFonts.montserrat(
                   fontSize: 14.sp,
                   height: 1.5,
-                  color: AppColor.greyTextColor,
+                  color: AppColors.greyTextColor,
                   fontWeight: FontWeight.w400,
                 ),
               ),

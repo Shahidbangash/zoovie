@@ -30,7 +30,7 @@ class TextComponent extends StatelessWidget {
       title ?? 'Add title',
       style: GoogleFonts.montserrat(
         fontSize: textSize ?? 14.sp,
-        color: textColor ?? AppColor.greyTextColor,
+        color: textColor ?? AppColors.greyTextColor,
         height: lineHeight ?? 1.6,
         fontWeight: textFontweight ?? FontWeight.w400,
       ),

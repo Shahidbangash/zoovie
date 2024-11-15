@@ -11,7 +11,7 @@ class SearchFieldComponent extends StatelessWidget {
       onTapOutside: (event) {},
       style: GoogleFonts.montserrat(
         fontSize: 16,
-        color: AppColor.blackColorText,
+        color: AppColors.blackColorText,
         fontWeight: FontWeight.w500,
       ),
       controller: TextEditingController(),
@@ -28,7 +28,7 @@ class SearchFieldComponent extends StatelessWidget {
             15,
           ),
           borderSide: const BorderSide(
-            color: AppColor.primaryColor,
+            color: AppColors.primaryColor,
           ),
         ),
         errorBorder: InputBorder.none,
@@ -40,14 +40,14 @@ class SearchFieldComponent extends StatelessWidget {
             15,
           ),
           borderSide: const BorderSide(
-            color: AppColor.greyTextColor,
+            color: AppColors.greyTextColor,
           ),
         ),
         hintText: 'Search',
         prefixIcon: const Icon(Icons.search),
         hintStyle: GoogleFonts.montserrat(
           fontSize: 14,
-          color: AppColor.blackColorText,
+          color: AppColors.blackColorText,
           fontWeight: FontWeight.w400,
         ),
       ),

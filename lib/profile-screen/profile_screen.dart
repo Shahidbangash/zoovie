@@ -64,7 +64,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               title: 'John Don',
               textSize: 16,
               textFontweight: FontWeight.w600,
-              textColor: AppColor.blackColorText,
+              textColor: AppColors.blackColorText,
             ),
             const TextComponent(
               title: 'Johndoe@gmail.com',

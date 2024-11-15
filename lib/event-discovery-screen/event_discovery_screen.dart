@@ -20,7 +20,7 @@ class EventDiscoveryScreen extends StatelessWidget {
             Container(
               width: double.infinity,
               decoration: const BoxDecoration(
-                color: AppColor.primaryColor,
+                color: AppColors.primaryColor,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(30),
                   bottomRight: Radius.circular(30),
@@ -55,7 +55,7 @@ class EventDiscoveryScreen extends StatelessWidget {
                           ),
                           child: Icon(
                             Icons.notifications_outlined,
-                            color: AppColor.primaryColor,
+                            color: AppColors.primaryColor,
                             size: 28.sp,
                           ),
                         ),
@@ -83,20 +83,20 @@ class EventDiscoveryScreen extends StatelessWidget {
                     child: TextField(
                       style: GoogleFonts.inter(
                         fontSize: 18.sp,
-                        color: AppColor.blackColorText,
+                        color: AppColors.blackColorText,
                         fontWeight: FontWeight.w500,
                       ),
                       decoration: InputDecoration(
                         hintText: 'Search...',
                         hintStyle: GoogleFonts.inter(
-                          color: AppColor.greyTextColor,
+                          color: AppColors.greyTextColor,
                           fontSize: 14.sp,
                         ),
                         filled: true,
                         fillColor: Colors.white,
                         prefixIcon: const Icon(
                           Icons.search,
-                          color: AppColor.greyTextColor,
+                          color: AppColors.greyTextColor,
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -153,7 +153,7 @@ class EventDiscoveryScreen extends StatelessWidget {
                       'See All',
                       style: GoogleFonts.inter(
                         fontSize: 14.sp,
-                        color: AppColor.primaryColor,
+                        color: AppColors.primaryColor,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -183,7 +183,7 @@ class EventDiscoveryScreen extends StatelessWidget {
                       'See All',
                       style: GoogleFonts.inter(
                         fontSize: 14.sp,
-                        color: AppColor.primaryColor,
+                        color: AppColors.primaryColor,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -205,7 +205,7 @@ class EventDiscoveryScreen extends StatelessWidget {
           Icon(
             icon,
             size: 16.sp,
-            color: AppColor.primaryColor,
+            color: AppColors.primaryColor,
           ),
           const SizedBox(width: 4),
           Text(
@@ -213,7 +213,7 @@ class EventDiscoveryScreen extends StatelessWidget {
             style: GoogleFonts.inter(
               fontSize: 14.sp,
               fontWeight: FontWeight.w500,
-              color: AppColor.blackColorText,
+              color: AppColors.blackColorText,
             ),
           ),
         ],
@@ -222,7 +222,7 @@ class EventDiscoveryScreen extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30),
         side: const BorderSide(
-          color: AppColor.primaryColor,
+          color: AppColors.primaryColor,
         ),
       ),
     );

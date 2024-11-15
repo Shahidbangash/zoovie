@@ -35,7 +35,7 @@ class ProfileSection extends StatelessWidget {
             children: [
               TextComponent(
                 title: 'Here to have a FUN time not a long time',
-                textColor: AppColor.blackColorText,
+                textColor: AppColors.blackColorText,
                 textSize: 20.sp,
                 textFontweight: FontWeight.w500,
               ),
@@ -60,13 +60,13 @@ class ProfileSection extends StatelessWidget {
                   children: [
                     TextComponent(
                       title: '05',
-                      textColor: AppColor.blackColorText,
+                      textColor: AppColors.blackColorText,
                       textFontweight: FontWeight.w600,
                       textSize: 20,
                     ),
                     TextComponent(
                       title: 'Events',
-                      textColor: AppColor.blackColorText,
+                      textColor: AppColors.blackColorText,
                       textFontweight: FontWeight.w400,
                       textSize: 12,
                     ),
@@ -77,13 +77,13 @@ class ProfileSection extends StatelessWidget {
                   children: [
                     TextComponent(
                       title: '10',
-                      textColor: AppColor.blackColorText,
+                      textColor: AppColors.blackColorText,
                       textFontweight: FontWeight.w600,
                       textSize: 20,
                     ),
                     TextComponent(
                       title: 'Connection',
-                      textColor: AppColor.blackColorText,
+                      textColor: AppColors.blackColorText,
                       textFontweight: FontWeight.w400,
                       textSize: 12,
                     ),

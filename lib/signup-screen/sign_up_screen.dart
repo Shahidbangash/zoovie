@@ -19,12 +19,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.whiteColor,
+      backgroundColor: AppColors.whiteColor,
       appBar: AppBar(
-        backgroundColor: AppColor.whiteColor,
+        backgroundColor: AppColors.whiteColor,
         elevation: 0,
         leading: const BackButton(
-          color: AppColor.blackColorText,
+          color: AppColors.blackColorText,
         ),
       ),
       body: SingleChildScrollView(
@@ -48,7 +48,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   'Lorem ipsum dolor sit amet, consectetur',
                   style: TextStyle(
                     fontSize: 14,
-                    color: AppColor.greyTextColor,
+                    color: AppColors.greyTextColor,
                   ),
                 ),
                 const SizedBox(height: 30),
@@ -157,7 +157,7 @@ class AgreeTermsTextCard extends StatelessWidget {
           style: const TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w400,
-            color: AppColor.primaryColor,
+            color: AppColors.primaryColor,
           ),
           children: [
             TextSpan(
@@ -166,7 +166,7 @@ class AgreeTermsTextCard extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
-                color: AppColor.primaryColor,
+                color: AppColors.primaryColor,
               ),
             ),
             const TextSpan(
@@ -174,7 +174,7 @@ class AgreeTermsTextCard extends StatelessWidget {
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
-                color: AppColor.primaryColor,
+                color: AppColors.primaryColor,
               ),
             ),
             TextSpan(
@@ -183,7 +183,7 @@ class AgreeTermsTextCard extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
-                color: AppColor.primaryColor,
+                color: AppColors.primaryColor,
               ),
             ),
           ],
@@ -271,7 +271,7 @@ class TextWithDivider extends StatelessWidget {
       children: [
         Expanded(
           child: Divider(
-            color: AppColor.greyTextColor,
+            color: AppColors.greyTextColor,
           ),
         ),
         SizedBox(width: 20),
@@ -280,13 +280,13 @@ class TextWithDivider extends StatelessWidget {
           style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w400,
-            color: AppColor.blackColorText,
+            color: AppColors.blackColorText,
           ),
         ),
         SizedBox(width: 20),
         Expanded(
           child: Divider(
-            color: AppColor.greyTextColor,
+            color: AppColors.greyTextColor,
           ),
         ),
       ],
@@ -520,7 +520,7 @@ class _AuthFieldState extends State<AuthField> {
             filled: true,
             hintText: widget.hintText,
             hintStyle: const TextStyle(
-              color: AppColor.greyTextColor,
+              color: AppColors.greyTextColor,
             ),
             suffixIcon: widget.isPassword
                 ? IconButton(

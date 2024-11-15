@@ -29,7 +29,7 @@ class TicketSummaryScreen extends StatelessWidget {
 
             AppComponent().ticketTypeItem(
               available: 0,
-              unAvailableColor: AppColor.primaryColor,
+              unAvailableColor: AppColors.primaryColor,
               price: 20,
               type: 'basic',
               noBookingAvilable: 'no Tickets left',

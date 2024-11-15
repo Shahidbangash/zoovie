@@ -17,7 +17,7 @@ class LoginHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: AppColor.primaryColor,
+      color: AppColors.primaryColor,
       padding: EdgeInsets.only(
           top: 40.h, bottom: 20.h), // Adjust for status bar and spacing
       child: Column(

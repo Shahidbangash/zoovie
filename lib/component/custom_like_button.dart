@@ -22,7 +22,7 @@ class CustomLikeButton extends StatelessWidget {
       circleColor:
           const CircleColor(start: Color(0xff00ddff), end: Color(0xff0099cc)),
       bubblesColor: const BubblesColor(
-        dotPrimaryColor: AppColor.primaryColor,
+        dotPrimaryColor: AppColors.primaryColor,
         dotSecondaryColor: Colors.white,
       ),
       likeBuilder: (bool isLiked) {

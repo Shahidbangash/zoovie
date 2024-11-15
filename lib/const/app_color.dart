@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppColor {
+class AppColors {
   static const tabButtonBorderColor = Color(0xffF2F2F2);
   static const whiteColor = Color(0xffFFFFFF);
   static const primaryColor = Color(0xffFD0003);

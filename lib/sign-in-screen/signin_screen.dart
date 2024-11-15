@@ -73,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     '+1',
                                     style: GoogleFonts.inter(
                                       fontSize: 14.sp,
-                                      color: AppColor.greyTextColor,
+                                      color: AppColors.greyTextColor,
                                     ),
                                   ),
                                 ),
@@ -134,13 +134,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                           _rememberMe = value ?? false;
                                         });
                                       },
-                                      activeColor: AppColor.primaryColor,
+                                      activeColor: AppColors.primaryColor,
                                     ),
                                     Text(
                                       'Remember me',
                                       style: GoogleFonts.inter(
                                         fontSize: 14.sp,
-                                        color: AppColor.greyTextColor,
+                                        color: AppColors.greyTextColor,
                                       ),
                                     ),
                                   ],
@@ -153,7 +153,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     'Forgot your password?',
                                     style: GoogleFonts.inter(
                                       fontSize: 14.sp,
-                                      color: AppColor.primaryColor,
+                                      color: AppColors.primaryColor,
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
@@ -170,7 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               },
                               borderRadius: 12,
                               title: 'Login',
-                              color: AppColor.primaryColor,
+                              color: AppColors.primaryColor,
                             ),
                             const SizedBox(height: 24),
                             Center(
@@ -178,7 +178,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 'OR',
                                 style: GoogleFonts.inter(
                                   fontSize: 14.sp,
-                                  color: AppColor.blackColorText,
+                                  color: AppColors.blackColorText,
                                 ),
                               ),
                             ),
@@ -188,14 +188,14 @@ class _LoginScreenState extends State<LoginScreen> {
                             AppComponent().button(
                               context,
                               borderColor: Colors.transparent,
-                              textColor: AppColor.blackColorText,
+                              textColor: AppColors.blackColorText,
                               onTap: () {
                                 // Continue as guest action
                                 EventDiscoveryScreen().launch(context);
                               },
                               borderRadius: 12,
                               title: 'Continue as a Guest',
-                              color: AppColor.lightGreyBgColor,
+                              color: AppColors.lightGreyBgColor,
                             ),
                           ],
                         ),

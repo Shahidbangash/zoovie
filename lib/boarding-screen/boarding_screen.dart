@@ -83,7 +83,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   'Experience Life To The Fullest Join\nEvent Spp Has You Covered!',
                   style: GoogleFonts.inter(
                     fontSize: 13.sp,
-                    color: AppColor.greyTextColor,
+                    color: AppColors.greyTextColor,
                     fontWeight: FontWeight.w500,
                   ),
                   textAlign: TextAlign.center,
@@ -98,7 +98,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   },
                   borderRadius: 12,
                   title: 'Get Started',
-                  color: AppColor.primaryColor,
+                  color: AppColors.primaryColor,
                 ),
               ],
             ),
