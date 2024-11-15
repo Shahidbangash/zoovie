@@ -19,10 +19,11 @@ class LoginHeader extends StatelessWidget {
       width: double.infinity,
       color: AppColors.primaryColor,
       padding: EdgeInsets.only(
-          top: 40.h, bottom: 20.h), // Adjust for status bar and spacing
+        top: 40.h,
+        bottom: 20.h,
+      ), // Adjust for status bar and spacing
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             title,

@@ -86,9 +86,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                 if (value == null || value.isEmpty) {
                                   return 'Please enter your phone number';
                                 }
-                                if (!RegExp(r'^[0-9]{10}\$').hasMatch(value)) {
-                                  return 'Please enter a valid phone number';
-                                }
+                                // if (!RegExp(r'^[0-9]{10}\$').hasMatch(value)) {
+                                //   return 'Please enter a valid phone number';
+                                // }
                                 return null;
                               },
                             ),
